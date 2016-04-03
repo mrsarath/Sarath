@@ -35,6 +35,8 @@ public class MemberController
     @RequestMapping(method=RequestMethod.POST)
     public String registerNewMember(@Valid @ModelAttribute("newMember") Member newMember, BindingResult result, Model model)
     {
+    	logger.info("log message");
+    	
         if (!result.hasErrors()) {
             memberDao.register(newMember);
             return "redirect:/";
