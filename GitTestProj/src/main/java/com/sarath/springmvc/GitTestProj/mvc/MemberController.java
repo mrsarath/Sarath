@@ -4,6 +4,8 @@ package com.sarath.springmvc.GitTestProj.mvc;
 
 import com.sarath.springmvc.GitTestProj.domain.Member;
 import com.sarath.springmvc.GitTestProj.repo.MemberDao;
+
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/")
 public class MemberController
 {
+	
+    Logger logger = Logger.getLogger(MemberController.class);
+    
     @Autowired
     private MemberDao memberDao;
 
